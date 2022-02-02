@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  head
+    include ./element/head
+  body
+    //- h1 "hello"
+    include ./element/header
+    .container-fluid
+      .row
+        include ./element/menu
+        main.col-md-9.ms-sm-auto.col-lg-10.px-md-4
+          .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+            h1.h2= title
+          .container
+            main
+              p= flash
+              block content
+    script(src='/assets/dist/js/bootstrap.bundle.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js' integrity='sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE' crossorigin='anonymous')

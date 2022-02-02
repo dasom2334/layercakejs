@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  .table-responsive
+    table.table.table-striped.table-sm
+      thead
+        tr
+          th(scope='col') #
+          th(scope='col') ID
+          th(scope='col') 이름
+          th(scope='col') 이메일
+          th(scope='col') 생성일
+          th(scope='col') 액션
+      tbody
+        each student in students[0]
+          tr
+            td
+              //- input(type='checkbox' placeholder='' value=student.id required='' name='students')
+            td= student.id
+            td= student.student_name
+            td= student.student_email
+            td= student.created
+            td
+              form#student-delete.needs-validation(novalidate='' action='/students/'+student.id method="post")
+                input#pub-id.form-control.h-100(type='hidden' placeholder='' value='delete' required='' name='_method')
+                button.btn.btn-danger.btn-sm(type='submit') 삭제
+  .row
+    .col-md-4
+      a.btn.btn-primary(href='/students/form')= title + ' 생성'

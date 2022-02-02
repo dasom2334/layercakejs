@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+      .row
+        .col-md-7.col-lg-8
+          h4.mb-3= title+ ' ' +(!student?'등록':'수정')
+          form#student.needs-validation(action='/students'+((student)?'/'+student.id:'') method="post")
+            if student 
+             input(type="hidden" name="_method" value="patch")
+            .row.g-3
+              .col-sm-12
+                label.form-label(for='student_name') 이름
+                input#student_name.form-control(type='text' placeholder='' value='#{student?student.student_name:""}' required='' name='student_name')
+                .invalid-feedback
+                  | 이름을 입력해주세요.
+              .col-sm-12
+                label.form-label(for='student_email') 이메일
+                input#student_name.form-control(type='email' placeholder='you@example.com' value='#{student?student.student_email:""}' required='' name='student_email')
+                .invalid-feedback
+                  | 이메일을 입력해주세요.
+            hr.my-4
+            button.w-100.btn.btn-primary.btn-lg(type='submit') 저장

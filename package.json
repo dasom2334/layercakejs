@@ -1,0 +1,23 @@
+{
+  "name": "inflab-be-test-dasom",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon  -e jade,js ./bin/www",
+    "test": "mocha -w --recursive --watch ./*.spec.js --watch ./*/*.spec.js --watch ./*/*/*.spec.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "typedi": "^0.10.0"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.4",
+    "nodemon": "^2.0.15"
+  }
+}
